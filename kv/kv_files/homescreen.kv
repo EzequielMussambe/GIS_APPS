@@ -1,26 +1,23 @@
 #:kivy 1.11.1
 #:import utils kivy.utils
 #:import MapView kivy.garden.mapview.MapView
-<HomeScreen>:
-    MapView:
-        canvas.before:
-            Color:
-                rgb:utils.get_color_from_hex("#ABD3DF") 
-            Rectangle:
-                pos:self.pos
-                size:self.size
-        id:mains
-        lat:36.000
-        lon:-30.000
-        zoom:2
-        double_tap_zoom:True
-        on_lat:
-            shows.text=str(self.lat) +" , "+str(self.lon)
-
-        
-
-        MapMarkerPopup:
-            id:coors
-        #     source:"OIP.jpg"
-            lat:-99999
-            lon:-99999
+# <HomeScreen>:
+#     # canvas.before:
+#     #     Color:
+#     #         rgb:utils.get_color_from_hex("#ABD3DF") 
+#     #     Rectangle:
+#     #         pos:self.pos
+#     #         size:self.size
+#     #id:mains
+#     lat:10
+#     lon:10
+#     zoom:5
+#     double_tap_zoom:True
+#     #center_on(10,10)
+#     #on_lat:
+#         # shows.text=str(self.lat) +" , "+str(self.lon)
+#     MapMarkerPopup:
+#         #id:coors
+#     #     source:"OIP.jpg"
+#         lat:10
+#         lon:10

@@ -6,22 +6,12 @@ from kivy.uix.image import Image
 from kivy.garden.mapview import MapView
 from kivy.garden.mapview import MapMarkerPopup
 
-class HomeScreen(MapView):
+class MyWin(MapView):
     pass
 
-class SchoolScreen(Screen):
-    pass
-
-class HospitalScreen(Screen):
-    pass
-
-class SupermarketScreen(Screen):
-    pass
-
-main_kv=Builder.load_file("home.kv")
 class MainApp(App):
     def build(self):
-        return main_kv
+        return MyWin()
 
 
 if __name__ == "__main__":

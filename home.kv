@@ -1,53 +1,75 @@
 #:kivy 1.11.1
 #:import utils kivy.utils
 #:include kv/kv_files/homescreen.kv
-GridLayout:
-    cols:1
-    FloatLayout:
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#35477d")
-            Rectangle:
-                size: self.size
-                pos: self.pos
-        GridLayout:
-            canvas:
-                Color:
-                    rgb: utils.get_color_from_hex("#314A24")
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-            # Put two weather icons here
-            rows: 1
-            pos_hint: {"top": 1, "left": 1}
-            size_hint: 1, .05
-    ScreenManager:
-        size_hint: 1, 0.699
-        pos_hint: {"top":.9, "left": 1}
-        id: screen_manager
-        HomeScreen:
-            name:"Screens"
-            id:Screens
-    
-    Widget:
-        size_hint: 1, .1
-        pos_hint: {"top": .1, "right": 1}
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#35477d")
-            Rectangle:
-                size: self.size
-                pos: self.pos
-    FloatLayout:
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#314A24")
-            Rectangle:
-                size: self.size
-                pos: self.pos
-        # Put two weather icons and avatar icon
-        rows: 1
-        pos_hint: {"top": .6, "left": 1}
-        size_hint: 1, .15
+##:include sc.kv
+
+MapView:
+    lat:10
+    lon:10
+    zoom:5
+    double_tap_zoom:True
+# BoxLayout:
+#     orientation:"vertical"
+#     HomeScreen:
+#         # canvas.before:
+#         #     Color:
+#         #         rgb: utils.get_color_from_hex("#35477d")
+#         #     Rectangle:
+#         #         size: self.size
+#         #         pos: self.pos
+#         name:"Screens"
+#         id:Screens
+# GridLayout:
+#     cols:1
+    # HomeScreen:
+    #     name:"Screens"
+    #     id:Screens
+    # FloatLayout:
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#35477d")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
+    #     HomeScreen:
+    #         name:"Screens"
+    #         id:Screens
+    #     GridLayout:
+    #         canvas:
+    #             Color:
+    #                 rgb: utils.get_color_from_hex("#314A24")
+    #             Rectangle:
+    #                 size: self.size
+    #                 pos: self.pos
+    #         # Put two weather icons here
+    #         rows: 1
+    #         pos_hint: {"top":.1, "left": 1}
+    #         size_hint: 1, .05
+
+
+    # # ScreenManager:
+    # #     size_hint: 1, 0.699
+    # #     pos_hint: {"top":.9, "left": 1}
+    # #     id: screen_manager   
+    # Widget:
+    #     size_hint: 1, .1
+    #     pos_hint: {"top": .1, "right": 1}
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#35477d")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
+    # FloatLayout:
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#314A24")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
+    #     # Put two weather icons and avatar icon
+    #     rows: 1
+    #     pos_hint: {"top": .3, "left": 1}
+    #     size_hint: 1, .15
     
 
