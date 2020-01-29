@@ -6,9 +6,11 @@ from kivy.uix.image import Image
 from kivy.garden.mapview import MapView
 from kivy.garden.mapview import MapMarkerPopup
 
-class HomeScreen(MapView):
+class HomeScreen(Screen):
     pass
 
+class SearchTool(Screen):
+    pass
 class SchoolScreen(Screen):
     pass
 
