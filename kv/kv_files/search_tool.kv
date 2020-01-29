@@ -8,20 +8,57 @@
     font_size:14
     bold:True
 <SearchTool>:
-    FloatLayout:
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#35477d")
-            Rectangle:
-                size:self.size
-                pos:self.pos
-        FloatLayout:
-            size:self.size
-            TextInput:
-                id:login_email
-                hint_text:"email"
-                
-                size_hint:.8,.8
-                pos_hint:{"top":.9, "right":.9}
+    # #FloatLayout:
+    # GridLayout:
+    #     c
+        # canvas:
+        #     Color:
+        #         rgb: utils.get_color_from_hex("#35477d")
+        #     Rectangle:
+        #         size:self.size
+        #         pos:self.pos
+        #FloatLayout:
+    BoxLayout:
+        orientation:"vertical"
+        size_hint_y:None
+        height:50
+        padding:10
+        spacing:10
+        GridLayout:
 
-                
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#35477d")
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+            #top:self.top
+            cols:2
+            #size:self.size
+            Button:
+                #text: "%s Comment" % icon('comment', 32)
+                markup:True
+                size_hint_x:0.03
+                Image:
+                    source:"images/search.png"
+                    size_hint_x:0.03
+                    #size_hint_y:.3
+                    #y:self.size[1]
+                    #x:self.size[0]
+                    pos_hint:(1,.8)
+            TextInput:
+                size_hint_y:None
+                id:login_email
+                hint_text:"Search"
+                size_hint_x:0.3
+                size:(10,38)
+                pos:self.pos
+
+                multiline:False
+
+
+                #pos:self.pos
+                # size_hint:.8,.8
+                # pos_hint:{"top":.9, "right":.9}
+
+            

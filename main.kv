@@ -1,10 +1,68 @@
 #:kivy 1.11.1
 #:import utils kivy.utils
+#:include kv/kv_files/homescreen.kv
+#:include kv/kv_files/search_tool.kv
+GridLayout:
+    cols:1
 
-<MyWin>:
+    GridLayout:
+        size_hint_y:None
+        cols:2
+        height:55
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#35477d")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        SearchTool:
+    # GridLayout:
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#35477d")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
 
-    lat:10
-    lon:10
-    zoom:5
-    double_tap_zoom:True
-    
+    #     cols:2
+    #     pos_hint: {"top": .95, "left": 1}
+    #     size_hint: 1, .15
+        
+        # TextInput:
+
+        
+
+            # TextInput:
+            #     canvas.before:
+            #         Color:
+            #             rgb: utils.get_color_from_hex("#FA320A")
+            #         Rectangle:
+            #             size: self.size
+            #             pos: self.pos
+            #     # canvas:
+            #     #     Color:
+            #     #         rgb: utils.get_color_from_hex("#35477d")
+            #     #     Rectangle:
+            #     #         size: self.size
+            #     #         pos: self.pos
+            #     id:login_email
+            #     hint_text:"email"
+                # size_hint:.8,.1
+                # pos_hint:{"top":.9, "right":.9}
+
+    ScreenManager:
+        size_hint: 1, 0.699
+        pos_hint: {"top": .799, "right": 1}
+        id: screen_manager        
+        HomeScreen:
+            name:"rei"
+            
+    Widget:
+        size_hint: 1, .1
+        pos_hint: {"top": .1, "left": 1}
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#35477d")
+            Rectangle:
+                size: self.size
+                pos: self.pos

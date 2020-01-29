@@ -20,7 +20,7 @@ class HospitalScreen(Screen):
 class SupermarketScreen(Screen):
     pass
 
-main_kv=Builder.load_file("home.kv")
+main_kv=Builder.load_file("main.kv")
 class MainApp(App):
     def build(self):
         return main_kv

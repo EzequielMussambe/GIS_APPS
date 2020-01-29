@@ -3,21 +3,27 @@
 #:include kv/kv_files/homescreen.kv
 #:include kv/kv_files/search_tool.kv
 GridLayout:
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex("#35477d")
+        Rectangle:
+            size: self.size
+            pos: self.pos
     cols:1
     FloatLayout:
         GridLayout:
-            canvas:
+            canvas.before:
                 Color:
                     rgb: utils.get_color_from_hex("#35477d")
                 Rectangle:
                     size: self.size
                     pos: self.pos
-            cols:2
+            rows:1
             pos_hint: {"top":1, "left": 1}
             size_hint: 1, .2
             SearchTool:
         FloatLayout:
-            canvas:
+            canvas.before:
                 Color:
                     rgb: utils.get_color_from_hex("#35477d")
                 Rectangle:
@@ -27,6 +33,7 @@ GridLayout:
             cols:2
             pos_hint: {"top": .95, "left": 1}
             size_hint: 1, .15
+            
             # TextInput:
 
            
@@ -50,11 +57,17 @@ GridLayout:
                 # pos_hint:{"top":.9, "right":.9}
 
         ScreenManager:
-            size_hint: 1, 0.699
-            pos_hint: {"top": .799, "right": 1}
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#35477d")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            #size_hint: 1, 0.699
+            #pos_hint: {"top": .799, "right": 1}
             id: screen_manager        
-            # HomeScreen:
-            #     name:"rei"
+            HomeScreen:
+                 name:"rei"
                 
         Widget:
             size_hint: 1, .1
