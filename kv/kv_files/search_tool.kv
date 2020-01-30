@@ -8,53 +8,59 @@
     font_size:14
     bold:True
 <SearchTool>:
-    # #FloatLayout:
-    # GridLayout:
-    #     c
-        # canvas:
-        #     Color:
-        #         rgb: utils.get_color_from_hex("#35477d")
-        #     Rectangle:
-        #         size:self.size
-        #         pos:self.pos
-        #FloatLayout:
+    size:self.size
+    pos:self.pos
+    
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#35477d")
+        Rectangle:
+            size:self.size
+            pos:self.pos
     BoxLayout:
         orientation:"vertical"
         size_hint_y:None
         height:50
-        padding:10
-        spacing:10
-        GridLayout:
+        padding:4
+        spacing:4
 
+        GridLayout:
             canvas:
                 Color:
                     rgb: utils.get_color_from_hex("#35477d")
                 Rectangle:
                     size:self.size
                     pos:self.pos
-            #top:self.top
-            cols:2
-            #size:self.size
-            Button:
-                #text: "%s Comment" % icon('comment', 32)
-                markup:True
-                size_hint_x:0.03
-                Image:
-                    source:"images/search.png"
-                    size_hint_x:0.03
-                    #size_hint_y:.3
-                    #y:self.size[1]
-                    #x:self.size[0]
-                    pos_hint:(1,.8)
+            cols:3
+            #size_hint:1,.4
+            size:self.size
+            pos:self.pos
+            ImageButton:
+                    
+                    #text: "%s Comment" % icon('comment', 32)
+                    #markup:True
+                #size_hint_x:.1
+                    #size:self.size
+                source:"images/search.png"
+                #source:"D:/Friendly-Fitness-App-master/icons/007-add-friend.png"
+                # Image:
+                #     source:"images/search.png"
+                #     size_hint_x:0.03
+                #     #size_hint_y:.3
+                #     #y:self.size[1]
+                #     #x:self.size[0]
+                #     pos_hint:(1,.8)
             TextInput:
-                size_hint_y:None
                 id:login_email
                 hint_text:"Search"
-                size_hint_x:0.3
-                size:(10,38)
-                pos:self.pos
+                size_hint_x:.6
+                #size:self.size[0],38
+                #pos:self.pos
 
                 multiline:False
+            Label:
+                id:"sp3"
+                size_hint_x:.3
 
 
                 #pos:self.pos
