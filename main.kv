@@ -8,14 +8,18 @@ GridLayout:
     GridLayout:
         size_hint_y:None
         cols:2
-        height:55
+        height:50
         canvas:
             Color:
-                rgb: utils.get_color_from_hex("#35477d")
+                rgb: utils.get_color_from_hex("#314A24")
             Rectangle:
                 size: self.size
                 pos: self.pos
-        SearchTool:
+
+        Label:
+            id:prim
+            text:"Michigan State University"
+        
     # GridLayout:
     #     canvas:
     #         Color:
@@ -56,13 +60,14 @@ GridLayout:
         id: screen_manager        
         HomeScreen:
             name:"rei"
+            SearchTool:
             
     Widget:
         size_hint: 1, .1
         pos_hint: {"top": .1, "left": 1}
         canvas:
             Color:
-                rgb: utils.get_color_from_hex("#35477d")
+                rgb: utils.get_color_from_hex("#314A24")
             Rectangle:
                 size: self.size
                 pos: self.pos

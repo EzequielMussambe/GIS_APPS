@@ -6,6 +6,7 @@ from kivy.uix.image import Image
 from kivy.garden.mapview import MapView
 from kivy.garden.mapview import MapMarkerPopup
 from kivy.uix.button import ButtonBehavior
+from kivy.uix.stacklayout import StackLayout
 from kivy.uix.image import Image
 
 class HomeScreen(Screen):
@@ -16,7 +17,10 @@ class SearchTool(Screen):
 class SchoolScreen(Screen):
     pass
 
-class ImageButton(ButtonBehavior,Image):
+class DropButton(ButtonBehavior,Image):
+    pass
+
+class SearchButton(ButtonBehavior,Image):
     pass
 class HospitalScreen(Screen):
     pass

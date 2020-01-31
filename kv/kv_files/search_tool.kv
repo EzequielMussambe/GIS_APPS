@@ -8,27 +8,114 @@
     font_size:14
     bold:True
 <SearchTool>:
-    size:self.size
-    pos:self.pos
-    StackLayout:
-        orientation:"lr-tb"
-        ImageButton:
+    # size_hint_y:None
+    # height:30
+    # padding:10,10
+    # spacing:10,10
+    # GridLayout:
+    #     cols:3
+    #orientation: 'lr-bt'
+    GridLayout:
+        cols:1
+        padding:10
+        spacing:10
+
+        StackLayout:
         
-        #text: "%s Comment" % icon('comment', 32)
-        #markup:True
-        #size_hint_x:.1
-        #size:self.size
-            source:"images/search.png"
-        TextInput:
-            id:login_email
-            hint_text:"Search"
-            #size_hint_x:.6
-        #size:self.size[0],38
-        #pos:self.pos
-            multiline:False
-        
-    # Label:
-    #     id:"sp3"
+            orientation:"lr-tb"
+
+            # Button: 
+            #     text:"Search"
+
+            #     size:50,30
+            #     size_hint: None, None
+            #text: "%s Comment" % icon('comment', 32)
+            #markup:True
+                #size_hint_x:.2  
+            #size:self.size
+                    #pos: self.pos
+            SearchButton:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state=="normal" else utils.get_color_from_hex("#000000")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                source:"images/plus.png"
+                
+                on_release:
+                size:20,29
+                size_hint: None, None
+
+            Label:
+                id:"nice"
+                size:5,29
+                size_hint:None, None
+
+            SearchButton:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state=="normal" else utils.get_color_from_hex("#000000")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                source:"images/minus.png"
+                on_release:
+                size:20,29
+                size_hint: None, None
+
+            Label:
+                id:"nice"
+                size:10,29
+                size_hint:None, None
+            DropButton:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d") if self.state=="normal" else utils.get_color_from_hex("#000000")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                source:"images/001_12.png"
+                on_release:
+                size:28,29
+                size_hint: None, None
+            TextInput:
+                canvas:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                id:login_email
+                hint_text:"Latitude, Longitude"
+                size:170,29
+                size_hint: None, None
+            SearchButton:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#35477d")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                source:"images/search.png"
+                on_press:
+                    self.source="images/check.png"
+                on_release:
+                    self.source="images/search.png"
+                size:28,29
+                size_hint: None, None
+
+            # anchor_x: 'left'
+            # anchor_y: 'top'
+           
+            #size_hint_x:.4
+        #     #size_hint_x:.6
+        # #size:self.size[0],38
+        # #pos:self.pos
+        #     multiline:False
+        #     size_hint:[1,.6]
+        # Label:
+        #     id:"sp3"
     #     size_hint_x:.3
     # canvas:
     #     Color:
