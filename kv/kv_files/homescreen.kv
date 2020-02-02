@@ -3,6 +3,7 @@
 #:import MapView kivy.garden.mapview.MapView
 <HomeScreen>:
     MapView:
+        
         canvas.before:
             Color:
                 rgb:utils.get_color_from_hex("#ABD3DF") 
@@ -22,3 +23,26 @@
             source:"images/pin.png"
             lat:10
             lon:10
+# <MainDrop>:
+#     canvas.before:
+#         Color:
+#             rgb: utils.get_color_from_hex("#35477d")
+#         Rectangle:
+#             size:self.size
+#             pos:self.pos
+#     Button: 
+#         text: 'Schools in Angola'
+#         size_hint_y: None
+#         height: 44
+#         on_release:root.select('Schools in Angola')
+#     Button: 
+#         text: 'Hospital in Angola'
+#         size_hint_y: None
+#         height: 44
+#         on_release:root.select('Hospital in Angola')
+        
+#     Button: 
+#         text: 'Christian Churches'
+#         size_hint_y: None
+#         height: 44
+#         on_release: root.select('Christian Churches')

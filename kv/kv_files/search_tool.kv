@@ -1,15 +1,16 @@
 #:kivy 1.11.1
 #:import utils kivy.utils
+#:include drops.kv
 <FlatButton@ButtonBehavior+Label>:
     color:0,0,0,1
     font_size:16
 <CustomButton@Button>:
-    size:20,10
+    size:40,40
     font_size:14
     bold:True
 <SearchTool>:
-    # size_hint_y:None
-    # height:30
+    #size_hint_y:None
+    #height:30
     # padding:10,10
     # spacing:10,10
     # GridLayout:
@@ -66,19 +67,19 @@
 
             Label:
                 id:"nice"
-                size:10,29
+                size:20,29
                 size_hint:None, None
-            DropButton:
-                canvas.before:
-                    Color:
-                        rgb: utils.get_color_from_hex("#35477d") if self.state=="normal" else utils.get_color_from_hex("#000000")
-                    Rectangle:
-                        size: self.size
-                        pos: self.pos
-                source:"images/001_12.png"
-                on_release:
-                size:28,29
-                size_hint: None, None
+            # DropButton:
+            #     canvas.before:
+            #         Color:
+            #             rgb: utils.get_color_from_hex("#35477d") if self.state=="normal" else utils.get_color_from_hex("#000000")
+            #         Rectangle:
+            #             size: self.size
+            #             pos: self.pos
+            #     source:"images/001_12.png"
+            #     on_release:
+            #     size:28,29
+            #     size_hint: None, None
             TextInput:
                 canvas:
                     Color:
@@ -90,21 +91,37 @@
                 hint_text:"Latitude, Longitude"
                 size:170,29
                 size_hint: None, None
-            SearchButton:
+            # SearchButton:
+            #     canvas.before:
+            #         Color:
+            #             rgb: utils.get_color_from_hex("#35477d")
+            #         Rectangle:
+            #             size: self.size
+            #             pos: self.pos
+            #     source:"images/search.png"
+            #     on_press:
+            #         self.source="images/check.png"
+            #     on_release:
+            #         self.source="images/search.png"
+            #     size:28,29
+            #     size_hint: None, None
+            
+            DropButton:
                 canvas.before:
                     Color:
                         rgb: utils.get_color_from_hex("#35477d")
                     Rectangle:
                         size: self.size
                         pos: self.pos
-                source:"images/search.png"
-                on_press:
-                    self.source="images/check.png"
-                on_release:
-                    self.source="images/search.png"
-                size:28,29
-                size_hint: None, None
 
+                source:"images/001_12.png"
+                size_hint: None, None
+                size:28,29
+                
+                MainDrop:
+
+
+        
             # anchor_x: 'left'
             # anchor_y: 'top'
            
@@ -157,4 +174,3 @@
                 # size_hint:.8,.8
                 # pos_hint:{"top":.9, "right":.9}
 
-            

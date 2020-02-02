@@ -1,0 +1,28 @@
+#:kivy 1.11.1
+
+<MainDrop>:
+    size_hint: None, None
+    size:28,2
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex("#35477d")
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    CustomButton: 
+        text: 'Schools in Angola'
+        size_hint_y: None
+        height: 44
+        on_release:root.select('Schools in Angola')
+    CustomButton: 
+        text: 'Hospital in Angola'
+        size_hint_y: None
+        height: 44
+        on_release:root.select('Hospital in Angola')
+        
+    CustomButton: 
+        text: 'Christian Churches'
+        size_hint_y: None
+        height: 44
+        on_release: root.select('Christian Churches')
+            
