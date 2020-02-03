@@ -3,23 +3,58 @@
 #:include kv/kv_files/homescreen.kv
 #:include kv/kv_files/search_tool.kv
 #:include drops.kv
-GridLayout:
-    cols:1
 
-    GridLayout:
-        size_hint_y:None
-        cols:2
-        height:50
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#314A24")
-            Rectangle:
-                size: self.size
-                pos: self.pos
+    #size_hint: 1, 0.699
+    #pos_hint: {"top": .799, "right": 1}
+HomeScreen:
+    BoxLayout:
+        top:root.top
+        orientation:'vertical'
+        pos:root.pos
+        size:root.size[0],100
+        padding:4
+        spacing:4
+        GridLayout:
+            rows:3
+            # canvas.before:
+            #     Color:
+            #         rgb: utils.get_color_from_hex("#314A24")
+            #     Rectangle:
+            #         size: self.size
+            #         pos: self.pos
+            BoxLayout:
+                orientation:"vertical"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#314A24")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+            Label:
+                id:"nice"
 
-        Label:
-            id:prim
-            text:"Michigan State University"
+            SearchTool:
+# GridLayout:
+#     size_hint_y:None
+    #     cols:2
+    #     height:50
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#314A24")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
+        # MainDrop:
+        #     canvas.before:
+        #         Color:
+        #             rgb: utils.get_color_from_hex("#314A24")
+        #         Rectangle:
+        #             size: self.size
+        #             pos: self.pos
+
+        # Label:
+        #     id:prim
+        #     text:"Michigan State University"
         
     # GridLayout:
     #     canvas:
@@ -55,20 +90,19 @@ GridLayout:
                 # size_hint:.8,.1
                 # pos_hint:{"top":.9, "right":.9}
 
-    ScreenManager:
-        size_hint: 1, 0.699
-        pos_hint: {"top": .799, "right": 1}
-        id: screen_manager        
-        HomeScreen:
-            name:"rei"
-            SearchTool:
+    # ScreenManager:
+    #     size_hint: 1, 0.699
+    #     pos_hint: {"top": .799, "right": 1}
+    #     id: screen_manager        
+
             
-    Widget:
-        size_hint: 1, .1
-        pos_hint: {"top": .1, "left": 1}
-        canvas:
-            Color:
-                rgb: utils.get_color_from_hex("#314A24")
-            Rectangle:
-                size: self.size
-                pos: self.pos
+            
+    # Widget:
+    #     size_hint: 1, .1
+    #     pos_hint: {"top": .1, "left": 1}
+    #     canvas:
+    #         Color:
+    #             rgb: utils.get_color_from_hex("#314A24")
+    #         Rectangle:
+    #             size: self.size
+    #             pos: self.pos
