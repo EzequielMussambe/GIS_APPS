@@ -1,0 +1,100 @@
+
+BoxLayout:
+    orientation:"vertical"
+
+
+    MDToolbar:
+        #title: "Navigation Drawer"
+        #md_bg_color: app.theme_cls.primary_color
+        elevation: 5
+        #left_action_items:       
+        # MDChip:
+        #     label:"HELLO YOUTUBE"
+        #     icon:"search"
+
+    # ScreenManager:
+    #     Screen:
+    #         id:maps
+
+    BoxLayout:
+
+        MDBottomNavigation:
+            #this is fancy screenmanagers
+            MDBottomNavigationItem:
+                text:"Home"
+                name:"screen1"
+                icon:"home"
+                BoxLayout:
+                    MapView:
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+            MDBottomNavigationItem:
+                id:h_p
+                text:"Hospital"
+                name:"screen2"
+                icon:"hospital"
+                #on_release:app.on_start()
+                BoxLayout:
+                    
+                    MapView:
+                        id:maps_hos
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+
+            MDBottomNavigationItem:
+                id:s_p
+                text:"School"
+                name:"screen3"
+                icon:"school"
+                BoxLayout:
+                    MapView:
+                        id:maps_sch
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+            MDBottomNavigationItem:
+                id:b_p
+                text:"Bank"
+                name:"screen4"
+                icon:"bank"
+                #on_release:app.on_start()
+                BoxLayout:
+                    
+                    MapView:
+                        id:maps_ban
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+            MDBottomNavigationItem:
+                id:c_p
+                text:"Commercial"
+                name:"screen5"
+                icon:"store"
+                BoxLayout:
+                    MapView:
+                        id:maps_com
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+            MDBottomNavigationItem:
+                id:cs_p
+                text:"House/Apt"
+                name:"screen6"
+                icon:"city"
+                #on_release:app.on_start()
+                BoxLayout: 
+                    MapView:
+                        id:maps_hou
+                        lat:-8.89566
+                        lon:13.23288
+                        zoom:14
+                        double_tap_zoom:True
+                
+              
