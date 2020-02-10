@@ -1,12 +1,13 @@
-
+#:include "luanda_kv/tools.kv"
 BoxLayout:
     orientation:"vertical"
-
-
+    
+   
     MDToolbar:
-        #title: "Navigation Drawer"
-        #md_bg_color: app.theme_cls.primary_color
+        title: "Navigation Drawer"
+        md_bg_color: app.theme_cls.primary_color
         elevation: 5
+        left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
         #left_action_items:       
         # MDChip:
         #     label:"HELLO YOUTUBE"
@@ -15,9 +16,10 @@ BoxLayout:
     # ScreenManager:
     #     Screen:
     #         id:maps
-
+    Tools:
+        
     BoxLayout:
-
+        
         MDBottomNavigation:
             #this is fancy screenmanagers
             MDBottomNavigationItem:
@@ -30,6 +32,7 @@ BoxLayout:
                         lon:13.23288
                         zoom:14
                         double_tap_zoom:True
+                    
             MDBottomNavigationItem:
                 id:h_p
                 text:"Hospital"

@@ -1,10 +1,67 @@
+#:import utils kivy.utils
+#:set color_shadow [0, 0, 0, .2980392156862745]
+<Tools>:
+    #orientation:"vertical"
 
-# <MainButton>:
-#     size_hint_y:None
-#             #height:100
-#         pos:root.pos
-#         size:root.size[0],100
-#         FlatButton:
-#             id:buts
-#             size:self.size
-#             text:"Click For Info"
+    size_hint:None,None
+    height:60
+    GridLayout:
+        padding:2,2
+        spacing:2,2
+        cols:6
+        MDIconButton:
+            icon:"plus-circle"
+            text_color:[0,0,0,1]
+            size_hint:None,None
+            height:30
+        MDIconButton:
+            icon:"minus-circle"
+            text_color:[0,0,0,1]
+            height:30
+       
+            
+        MDIconButton:
+            icon:"C:\\Users\\emcfm\\Downloads\\XwzcnM-search-icon-square-find-button-hd-image.png"
+            text_color:[0,0,0,1]
+            size_hint:None,None
+            size:50,45
+            #width:20
+        # MDIconButton:
+        #     icon:"C:\\Users\\emcfm\\Downloads\\Search.png"
+        #     text_color:[0,0,0,1]
+        #     md_bg_color:[0,0,0,1]
+
+        MDTextFieldRect:
+            id:newone
+            # canvas.before:
+            #     Color:
+            #         rgb: utils.get_color_from_hex("#314A24")
+            #     Rectangle:
+            #         size: self.size
+            #         pos: self.pos
+         # very helpful for password
+            #icon_left:"C:\\Users\\emcfm\\Downloads\\Search.png" # will delete the icons on the left
+            #icon_right:"refresh"
+           # on_icon_right:app.reis()
+            hint_text:"Latitude Longitude"
+            foreground_color:0,0,0,1
+            hint_text_color:0.5,0.5,.5,.5
+            cursor_color:1,0,0,1
+            size_hint:None,None
+            normal_color: color_shadow
+            active_color: color_shadow
+            height:30
+            #required: True
+            width:300
+            #on_focus:
+           # on_icon_left(self, instance, value)
+
+            #theme_text_color:"Custom"
+            #md_bg_color:[0,1,0,1]
+        MDIconButton:
+            icon:"refresh"
+            text_color:[0,0,0,1]
+            size_hint:None,None
+            height:30    
+            
+            
